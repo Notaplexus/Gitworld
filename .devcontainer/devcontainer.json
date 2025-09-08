@@ -1,24 +1,8 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/java:21",
-  "features": {
-    "ghcr.io/devcontainers/features/java:1": {
-      "version": "21",
-      "jdkDistro": "temurin"
-    }
+  "name": "Minecraft Server",
+  "build": {
+    "dockerfile": "Dockerfile"
   },
   "forwardPorts": [25565],
-  "portsAttributes": {
-    "25565": {
-      "label": "Minecraft Server",
-      "onAutoForward": "notify"
-    }
-  },
-  "postCreateCommand": "bash .devcontainer/setup.sh",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vscode.vscode-java-pack"
-      ]
-    }
-  }
+  "postCreateCommand": "bash /workspace/setup.sh"
 }
